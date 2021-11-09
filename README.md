@@ -1,0 +1,2 @@
+# GoodsDetailDemo
+仿京东RecyclerView嵌套WebView+数据推荐的RecyclerView
