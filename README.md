@@ -1,2 +1,2 @@
-# GoodsDetailDemo
-仿京东RecyclerView嵌套WebView+数据推荐的RecyclerView
+# ThreeLayersNestedScrolling
+RecyclerView里面的万能嵌套WebView+数据推荐的RecyclerView + 加载更多的RecyclerView嵌套功能
