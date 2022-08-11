@@ -5,17 +5,22 @@ import com.chad.library.adapter.base.entity.MultiItemEntity;
 public class DataBean implements MultiItemEntity {
 
     public static final int NORMAL_TYPE = 1;
+    public static final int NEST_RECYCLER_TYPE = 2;
 
     public  String text;
     public  String url;
+    public  int type;
 
-    public DataBean(String text, String url) {
+    public boolean isLoadData = false;
+
+    public DataBean(String text, String url, int type) {
         this.text = text;
         this.url = url;
+        this.type = type;
     }
 
     @Override
     public int getItemType() {
-        return NORMAL_TYPE;
+        return type == NEST_RECYCLER_TYPE ? NEST_RECYCLER_TYPE : NORMAL_TYPE;
     }
 }

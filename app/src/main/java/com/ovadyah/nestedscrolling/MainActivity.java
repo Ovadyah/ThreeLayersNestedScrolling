@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.ovadyah.nestedscrolling.ui.RecyclerViewPagerActivity;
+import com.ovadyah.nestedscrolling.ui.NestedRecyclerViewActivity;
+import com.ovadyah.nestedscrolling.ui.NestedViewPagerRecyclerViewActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -19,13 +20,18 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.nestedDemo1,
+    @OnClick({
+            R.id.nestedRecyclerView,
+            R.id.nestedViewPagerRecyclerView,
             R.id.nestedDemo2
-    })
+            })
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.nestedDemo1:
-                RecyclerViewPagerActivity.launch(this);
+            case R.id.nestedRecyclerView:
+                NestedRecyclerViewActivity.launch(this);
+                break;
+            case R.id.nestedViewPagerRecyclerView:
+                NestedViewPagerRecyclerViewActivity.launch(this);
                 break;
             case R.id.nestedDemo2:
                 break;

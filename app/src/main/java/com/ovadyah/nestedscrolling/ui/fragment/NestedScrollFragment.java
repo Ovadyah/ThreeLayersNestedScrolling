@@ -94,7 +94,7 @@ public class NestedScrollFragment extends Fragment {
 
         List<DataBean> dataBeans = new ArrayList<>();
         for (int i = 0; i<=20; i ++) {
-            dataBeans.add(new DataBean(String.format("嵌套的数据 ListItem%s",i + 1), ""));
+            dataBeans.add(new DataBean(String.format("嵌套的数据 ListItem%s",i + 1), "",DataBean.NORMAL_TYPE));
         }
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new NestedScrollRecyclerViewAdapter(getContext(), dataBeans));

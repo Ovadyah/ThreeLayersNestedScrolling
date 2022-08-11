@@ -1,6 +1,7 @@
 package com.ovadyah.nestedscrolling.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ovadyah.nestedscrolling.R;
@@ -45,6 +47,7 @@ public class NestedScrollRecyclerViewAdapter extends RecyclerView.Adapter<Nested
     public void onBindViewHolder(@NonNull ViewHoder viewHoder, int i) {
         DataBean dataBean = list.get(i);
         viewHoder.textView.setText(dataBean.text);
+        viewHoder.imageView.setBackgroundColor(Color.parseColor("#EE5F8F"));
 //        ImageLoader.with(context).loadBitmapAsync(dataBean.url,viewHoder.imageView);
     }
 

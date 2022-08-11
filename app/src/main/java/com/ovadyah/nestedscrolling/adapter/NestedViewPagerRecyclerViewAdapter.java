@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * @author hufeiyang
  */
-public class RecyclerNestAdapter extends BaseMultiItemQuickAdapter<MultiItemEntity, BaseViewHolder> {
+public class NestedViewPagerRecyclerViewAdapter extends BaseMultiItemQuickAdapter<MultiItemEntity, BaseViewHolder> {
 
     private final FragmentActivity mActivity;
 
@@ -31,7 +31,7 @@ public class RecyclerNestAdapter extends BaseMultiItemQuickAdapter<MultiItemEnti
     private int mSelectedPosition;
 
 
-    public RecyclerNestAdapter(FragmentActivity activity) {
+    public NestedViewPagerRecyclerViewAdapter(FragmentActivity activity) {
         mActivity = activity;
         addItemType(DataBean.NORMAL_TYPE, R.layout.item_nested_scroll_view);
         addItemType(ViewPagerBean.VIEW_PAGE_TYPE, R.layout.item_view_page);

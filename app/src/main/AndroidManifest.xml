@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.RecyclerViewPagerActivity" />
+        <activity android:name=".ui.NestedViewPagerRecyclerViewActivity" />
+        <activity android:name=".ui.NestedRecyclerViewActivity" />
     </application>
 
 </manifest>
