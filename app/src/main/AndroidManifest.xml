@@ -21,6 +21,7 @@
 
         <activity android:name=".ui.NestedViewPagerRecyclerViewActivity" />
         <activity android:name=".ui.NestedRecyclerViewActivity" />
+        <activity android:name=".ui.ThreeLayersNestedScrollActivity" />
     </application>
 
 </manifest>

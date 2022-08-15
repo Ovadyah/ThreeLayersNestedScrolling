@@ -61,24 +61,24 @@
         </com.ovadyah.nestedwidget.shadowlayout.ShadowLayout>
 
         <com.ovadyah.nestedwidget.shadowlayout.ShadowLayout
-            android:id="@+id/nestedDemo2"
+            android:id="@+id/threeLayersNestedScroll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:hl_cornerRadius="18dp"
             app:hl_layoutBackground_true="#EE5F8F"
             app:hl_cornerRadius_leftTop="0dp"
+            app:hl_cornerRadius_rightBottom="0dp"
             app:hl_shadowColor="#29000000"
             app:hl_shadowLimit="10dp">
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:paddingLeft="30dp"
-                android:paddingRight="30dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textSize="18dp"
                 android:textColor="#262c32"
-                android:text="NestedDemo2" />
+                android:text="三层嵌套滚动冲突解决, RecyclerView嵌套ViewPager嵌套RecyclerView嵌套ViewPager2嵌套RecyclerView" />
          </com.ovadyah.nestedwidget.shadowlayout.ShadowLayout>
 
         <TextView
