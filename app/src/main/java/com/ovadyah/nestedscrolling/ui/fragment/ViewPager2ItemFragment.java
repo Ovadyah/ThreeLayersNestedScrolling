@@ -26,7 +26,7 @@ public class ViewPager2ItemFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    private static final String FRAGMENT_CURRENT_ID = "current_id";
     @BindView(R.id.vp2_recyclerView)
     RecyclerView recyclerView;
 
@@ -40,7 +40,7 @@ public class ViewPager2ItemFragment extends Fragment {
 
 
     private int mFragmentIndex;
-
+    int mFragmentId = 0;
     public ViewPager2ItemFragment() {
         // Required empty public constructor
     }
@@ -68,12 +68,21 @@ public class ViewPager2ItemFragment extends Fragment {
         return fragment;
     }
 
+    public static ViewPager2ItemFragment newInstance(int currentPos) {
+        ViewPager2ItemFragment fragment = new ViewPager2ItemFragment();
+        Bundle args = new Bundle();
+        args.putInt(FRAGMENT_CURRENT_ID, currentPos);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+            mFragmentId = getArguments().getInt(FRAGMENT_CURRENT_ID);
         }
     }
 
@@ -136,10 +145,8 @@ public class ViewPager2ItemFragment extends Fragment {
             return false;
         }
         View parent = (View) getView().getParent();
-        if (parent instanceof ViewPager) {
-            ViewPager viewPager = (ViewPager) parent;
-            int currentItem = viewPager.getCurrentItem();
-            return currentItem == mFragmentIndex;
+        if (parent != null) {
+            return mFragmentIndex == mFragmentId;
         }
         return false;
     }

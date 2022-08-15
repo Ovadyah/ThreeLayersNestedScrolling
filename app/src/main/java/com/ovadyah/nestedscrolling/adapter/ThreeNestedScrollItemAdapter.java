@@ -63,12 +63,11 @@ public class ThreeNestedScrollItemAdapter extends BaseMultiItemQuickAdapter<Mult
         viewPagerBean.isLoadData = true;
         List<Fragment> fragments = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            ViewPager2ItemFragment fragment = new ViewPager2ItemFragment();
+            ViewPager2ItemFragment fragment = ViewPager2ItemFragment.newInstance(i);
             fragment.setIndex(i);
             fragment.setNestedParentLayout(mNestedScrollingOuterLayout);
             fragments.add(fragment);
         }
-
         final TabLayout tab = (TabLayout) baseViewHolder.getView(R.id.tab_layout);
         final ViewPager2Adapter adapter = new ViewPager2Adapter(mFragment);
         final ViewPager2 viewPager2 = (ViewPager2) baseViewHolder.getView(R.id.view_pager2);
@@ -86,9 +85,14 @@ public class ThreeNestedScrollItemAdapter extends BaseMultiItemQuickAdapter<Mult
         TabLayoutMediator tabMediator = new TabLayoutMediator(tab, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-                tab.setText(titles[position]);
 //                tab.setIcon(titleItem[position]);
-                updateCurrentFragment(position, adapter);
+                tab.setText(titles[position]);
+                viewPager2.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        updateCurrentFragment(position, adapter);
+                    }
+                }, 120);
             }
         });
         tabMediator.attach();
